@@ -40,7 +40,7 @@ As this rather unattractive and took 40 minutes or more I created an additional 
 It trapps all all odd network or other incidents and restarts undtil completed   
 Due to the long run time it is no well suted to SMB or Webterminal   
 You better une it from the console with SQL shell to escape from timeouts   
-´´´´
+````
 $ docker-compose exec iris iris session iris
 USER>do $system.SQL.Shell()
 [SQL]USER>>CALL TOTAL()
@@ -50,10 +50,10 @@ USER>do $system.SQL.Shell()
 2023-06-07 19:10:29 directory page 2
 2023-06-07 19:10:31 directory page 3
 2023-06-07 19:10:34 directory page 4
-- - - - 
+   -- -- - - 
 ````
-and in Mangement Portal you may watch the table and the progeress   
-()(http://192.168.0.9:42773/csp/sys/UtilHome.csp)
+And in [Mangement Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
+you may watch the table and the progress in loading   
 
 [Article in DC](https://community.intersystems.com/post/oex-mapping)   
 
