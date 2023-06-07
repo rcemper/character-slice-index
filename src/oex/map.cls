@@ -43,6 +43,13 @@ ClassMethod unique(url As %String) As %Boolean
 }
 ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlProc ]
 {
+#; job ##class(oex.map).total()::0  w $ZC,!,$T
+#; special for background job on demo server		
+  if $I["null" {
+    kill ^SPOOL(1)
+    open 2:1 use 2
+		}
+
 	&sql(CALL oex.CLEAR())
 	if SQLCODE quit +SQLCODE
 	write $zdt($h,3)," load directory",!
