@@ -20,7 +20,7 @@ docker-compose exec iris iris session iris
 
 **[or use Online Demo](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25CSP.Portal.Home.zen) :**
 
-### data Load 
+### Data Load 
 
 [Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp)   
 [Demo Server WebTerminal](https://oex-mapping.demo.community.intersystems.com/terminal/)    
