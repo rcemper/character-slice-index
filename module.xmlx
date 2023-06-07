@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="run-container-command-execution.ZPM">
+  <Document name="oex-mapping.ZPM">
     <Module>
-      <Name>run-container-command-execution</Name>
-	  <Description>Run Command in Container</Description> 
+      <Name>oex-mapping</Name>
+	  <Description>extract info from OEX</Description> 
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="zrccx.MAC"/>
+      <Resource Name="oex.PKG"/>
     </Module>
   </Document>
 </Export>
