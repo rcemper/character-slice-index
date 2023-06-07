@@ -33,7 +33,7 @@ is the most elegant way.
 In practical tests it turned out that loading directory pages is no problen.   
 Differently, with the package details I experienced network timeouts every 30..50 packages.   
 Restarting the download is no problem and works OK. Though you have to watch it.   
-As this rather unattractive and took $0 minutes or more I created an additional SQL procedure   
+As this rather unattractive and took 40 minutes or more I created an additional SQL procedure   
 ````
 - CALL oex.TOTAL()
 ````
