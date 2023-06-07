@@ -41,7 +41,39 @@ ClassMethod unique(url As %String) As %Boolean
 {
   quit '..urlExists(url)
 }
-
+ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlProc ]
+{
+	&sql(CALL oex.CLEAR())
+	if SQLCODE quit +SQLCODE
+	write $zdt($h,3)," load directory",!
+	set ec=0
+	for pn=1:1:maxpage {
+		&sql(CALL oex.PAGE(:pn))
+		write $zdt($h,3)," directory page ",pn,!
+		if 'SQLCODE set ec=0 continue
+		if $i(ec)>10 return +SQLCODE
+		if $i(pn,-1) continue		
+	}
+	write $zdt($h,3)," load details",!
+	set sc=0
+	for  {
+		set ec=0
+		&SQL(SELECT top 1 id, oex.DETAIL(id) into:res() 
+			FROM oex.map WHERE author is NULL)
+		if SQLCODE=100 set ec=0 quit	
+		if 'SQLCODE&%ROWCOUNT  {
+			write $zdt($h,3)," load details "_res(1)_$s(ec:" retry "_ec,1:""),!
+			set ec=0
+			if $i(sc) continue
+			}
+		else {
+			if $i(ec)< 10 continue
+			zw  b  continue 
+		    }
+		}
+	write $zdt($h,3)," loaded "_sc_" details",!	
+	quit $$$OK
+}
 Storage Default
 {
 <Data name="mapDefaultData">
