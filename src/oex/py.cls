@@ -48,6 +48,9 @@ while True :
   til = pg.find('</app-tile',frm)
   app = pg[frm:til]
   url   =cont('href="','"')
+##  special for a bad encoded URL
+  if url.find('John')>0 :
+     url=url.replace("\\'","'")
   label =cont('label"> ',' </')
   if upd.unique(url):
     obj      =upd._New()
