@@ -65,6 +65,11 @@ ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlPr
 	}
 	write $zdt($h,3)," start load details",!
 	set sc=0
+#;
+#; I have to set res to something because Code Quality Check just
+#; doesn't understand how host variables in embedded SQL work  !!!	
+#; WHAT A NONSENSE !
+	set res=""
 	for  {
 		set ec=0
 		&SQL(SELECT top 1 id, oex.DETAIL(id) into:res() 
