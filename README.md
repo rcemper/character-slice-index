@@ -50,7 +50,7 @@ USER>do $system.SQL.Shell()
 2023-06-07 19:10:34 directory page 4
    -- -- - - 
 ````
-And in [Mangement Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
+And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
 you may watch the table and the progress in loading   
 
 [Article in DC](https://community.intersystems.com/post/oex-mapping)   
