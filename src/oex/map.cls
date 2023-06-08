@@ -35,7 +35,9 @@ Property xurl As %String(MAXLEN = "") [ Calculated, SqlComputeCode = {set {*}="h
 
 Index url On url [ Unique ];
 
-Index pgn On page;
+Index pgn On page [ Type = bitmap ];
+
+Index aut On author [ Type = bitmap ];
 
 ClassMethod unique(url As %String) As %Boolean
 {
