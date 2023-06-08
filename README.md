@@ -1,7 +1,7 @@
-## Prerequisites
+### Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
-## Installation 
+### Installation 
 Clone/git pull the repo into any local directory
 ```
 git https://github.com/rcemper/Dataset-OEX-reviews.git
@@ -27,7 +27,7 @@ You may any of them just use is by **CALL procedure()** or **SELECT procedure()*
 For details  **SELECT id,oex.DETAIL(id) from oex.map where author is null**    
 is the most elegant way.  
 
-### Data Load 
+## Data Load 
 In practical tests it turned out that loading directory pages is no problen.   
 Differently, with the package details I experienced network timeouts every 30..50 packages.   
 Restarting the download is no problem and works OK. Though you have to watch it.   
