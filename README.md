@@ -33,7 +33,7 @@ Differently, with the package details I experienced network timeouts every 30..5
 Restarting the download is no problem and works OK. Though you have to watch it.   
 As this rather unattractive and took 40 minutes or more I created an additional SQL procedure   
 ````
-- CALL oex.TOTAL()
+- CALL oex.TOTAL()  
 ````
 It trapps all all odd network or other incidents and restarts undtil completed   
 Due to the long run time it is no well suted to SMB or Webterminal   
