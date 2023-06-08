@@ -14,7 +14,7 @@ docker-compose up -d --build
 ```
 docker-compose exec iris iris session iris
 ```
-**[or use Online Demo](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25CSP.Portal.Home.zen) :**
+or use **[Online Demo](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25CSP.Portal.Home.zen)**   
 
 There are 5 SQL procedures in Python to manipulate the table    
 ````
