@@ -54,7 +54,7 @@ ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlPr
 
 	&sql(CALL oex.CLEAR())
 	if SQLCODE quit +SQLCODE
-	write $zdt($h,3)," load directory",!
+	write $zdt($h,3)," start load directory",!
 	set ec=0
 	for pn=1:1:maxpage {
 		&sql(CALL oex.PAGE(:pn))
@@ -63,7 +63,7 @@ ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlPr
 		if $i(ec)>10 return +SQLCODE
 		if $i(pn,-1) continue		
 	}
-	write $zdt($h,3)," load details",!
+	write $zdt($h,3)," start load details",!
 	set sc=0
 	for  {
 		set ec=0
