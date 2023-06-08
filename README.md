@@ -54,6 +54,7 @@ And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp)
 you may watch the table and the progress in loading   
 
 [Article in DC](https://community.intersystems.com/post/oex-mapping)   
+[Video](https://youtu.be/c5MOQMCfNRQ)    
 
 [Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp)   
 [Demo Server WebTerminal](https://oex-mapping.demo.community.intersystems.com/terminal/)    
