@@ -41,7 +41,7 @@ You better une it from the console with SQL shell to escape from timeouts
 ````
 $ docker-compose exec iris iris session iris
 USER>do $system.SQL.Shell()
-[SQL]USER>>CALL TOTAL()
+[SQL]USER>>CALL oex.TOTAL()
 1.      call oex.TOTAL()
 2023-06-07 19:10:25 load directory
 2023-06-07 19:10:27 directory page 1
