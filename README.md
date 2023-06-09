@@ -15,8 +15,9 @@ docker-compose up -d --build
 docker-compose exec iris iris session iris
 ```
 or use **[Online Demo](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25CSP.Portal.Home.zen)**   
+The demo is loaded already. There is no need to rebuild / reload it.   
 
-There are 5 SQL procedures in Python to manipulate the table    
+There are 4 SQL procedures written in embedded Python to manipulate the table    
 ````
 - oex.CLEAR()           to erase the whole table   
 - oex.LOAD(first,last)  to load directory pages first to last..to   
