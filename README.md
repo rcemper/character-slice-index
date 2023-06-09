@@ -24,8 +24,8 @@ There are 4 SQL procedures written in embedded Python to manipulate the table
 - oex.PAGE(pn)          to load an inidividual directory page   
 - oex.DETAIL(id)        to fill all details for a specific package   
 ````
-You may any of them just use is by **CALL procedure()** or **SELECT procedure()**  
-For details  **SELECT id,oex.DETAIL(id) from oex.map where author is null**    
+You may just use any of them by **CALL procedure()** or **SELECT procedure()**  
+To load details  **SELECT id,oex.DETAIL(id) from oex.map where author is null**    
 is the most elegant way.  
 
 ## Data Load 
@@ -37,8 +37,8 @@ As this rather unattractive and took 40 minutes or more I created an additional 
 - CALL oex.TOTAL()  
 ````
 It trapps all all odd network or other incidents and restarts undtil completed   
-Due to the long run time it is no well suted to SMB or Webterminal   
-You better une it from the console with SQL shell to escape from timeouts   
+Due to the long run time it is no well suited to SMB or Webterminal   
+You better use it from the console with SQL shell to escape from timeouts   
 ````
 $ docker-compose exec iris iris session iris
 USER>do $system.SQL.Shell()
