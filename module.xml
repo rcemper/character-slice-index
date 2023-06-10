@@ -3,11 +3,12 @@
   <Document name="oex-mapping.ZPM">
     <Module>
       <Name>oex-mapping</Name>
-	  <Description>extract info from OEX</Description> 
+      <Description>extract info from OEX</Description> 
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="oex.PKG"/>
+      <UnitTest Name="/src" Package="UnitTests" Phase="test"/>	    
     </Module>
   </Document>
 </Export>
