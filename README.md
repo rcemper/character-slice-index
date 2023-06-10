@@ -60,6 +60,8 @@ from terminal / console prompt run
 ````
 zwrite ##class(oex.test).Run()
 ````
+and see the results:  
+http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?$NAMESPACE=USER
 
 [Article in DC](https://community.intersystems.com/post/oex-mapping)   
 [Video](https://youtu.be/c5MOQMCfNRQ)    
