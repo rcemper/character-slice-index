@@ -37,7 +37,7 @@ As this rather unattractive and took 40 minutes or more I created an additional 
 ````
 - CALL oex.TOTAL()  
 ````
-It trapps all all odd network or other incidents and restarts undtil completed   
+It traps all odd network or other incidents and restarts undtil completed   
 Due to the long run time it is no well suited to SMB or Webterminal   
 You better use it from the console with SQL shell to escape from timeouts   
 ````
