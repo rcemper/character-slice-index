@@ -55,8 +55,12 @@ USER>do $system.SQL.Shell()
 And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
 you may watch the table and the progress in loading   
 
-### Unit Test
-from terminal / console prompt run
+#### Unit Test
+from terminal / console prompt run  
+````
+zpm "oex-mapping test -v
+````
+or
 ````
 zwrite ##class(oex.test).Run()
 ````
