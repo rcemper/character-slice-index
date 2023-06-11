@@ -58,7 +58,7 @@ you may watch the table and the progress in loading
 #### Unit Test
 from terminal / console prompt run  
 ````
-zpm "oex-mapping test -v
+zpm "oex-mapping test -v"
 ````
 or
 ````
