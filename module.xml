@@ -4,10 +4,11 @@
     <Module>
       <Name>oex-mapping</Name>
       <Description>extract info from OEX</Description> 
-      <Version>0.0.1</Version>
+      <Version>0.0.2</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="oex.PKG"/>
+      <Resource Name="oex.GBL"/>
       <UnitTest Name="/src" Package="UnitTests" Phase="test"/>	    
     </Module>
   </Document>
