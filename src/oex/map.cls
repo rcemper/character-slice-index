@@ -43,6 +43,17 @@ ClassMethod unique(url As %String) As %Boolean
 {
   quit '..urlExists(url)
 }
+ClassMethod quick(file As %String = "oex.XML") As %Boolean [ SqlName = QUICK, SqlProc ]
+{
+  if $i(sc),'$d(^oex) set sc=$system.OBJ.Load(file)
+  if sc {
+    do ..%KillExtent()
+    merge ^oex.mapD=^oex
+    set sc=..%BuildIndices()
+  }
+  quit sc
+}
+
 ClassMethod total(maxpage As %Integer = 25) As %Integer [ SqlName = TOTAL, SqlProc ]
 {
 #; job ##class(oex.map).total()::0  w $ZC,!,$T
