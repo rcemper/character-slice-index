@@ -55,7 +55,7 @@ USER>do $system.SQL.Shell()
 And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
 you may watch the table and the progress in loading   
 
-#### QUick Loading
+#### Quick Loading
 If do not want to wait for a complete fresh load   
 there is a short cut based on a snapshot of OEX from 2023-06-12 available  
 ````
