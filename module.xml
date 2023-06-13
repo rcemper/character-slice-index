@@ -4,7 +4,7 @@
     <Module>
       <Name>oex-mapping</Name>
       <Description>extract info from OEX</Description> 
-      <Version>0.0.2</Version>
+      <Version>0.0.3</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="oex.PKG"/>
