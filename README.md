@@ -55,12 +55,6 @@ USER>do $system.SQL.Shell()
 And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
 you may watch the table and the progress in loading   
 
-#### Quick Loading
-If do not want to wait for a complete fresh load   
-there is a short cut based on a snapshot of OEX from 2023-06-12 available  
-````
-- CALL oex.QUICK()  
-````
 
 #### Unit Test
 from terminal / console prompt run  
@@ -74,7 +68,22 @@ zwrite ##class(oex.test).Run()
 and see the results:  
 http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?$NAMESPACE=USER
 
-[Article in DC](https://community.intersystems.com/post/oex-mapping)   
+#### Analytics
+I have added a Cube and Pivot table for various exercises.
+The Cube is built based onthe remainders from Unit test.
+An initial Pivot 'oex' is prepared.
+
+#### Quick Loading
+If do not want to wait for a complete fresh load   
+there is a short cut based on a snapshot of OEX from 2023-06-12 available  
+````
+- CALL oex.QUICK()  
+````
+finally the Analytics Cube is rebuilt to reflect the results
+
+[1st Article in DC](https://community.intersystems.com/post/oex-mapping)    
+[2nd Article in DC](https://community.intersystems.com/post/oex-mapping-2)    
+ 
 [Video](https://youtu.be/c5MOQMCfNRQ)    
 
 [Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp)   
