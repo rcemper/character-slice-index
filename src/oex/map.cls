@@ -51,6 +51,7 @@ ClassMethod quick(file As %String = "oex.XML") As %Boolean [ SqlName = QUICK, Sq
     merge ^oex.mapD=^oex
     set sc=..%BuildIndices()
   }
+  if sc set sc=##class(%DeepSee.Utils).%BuildCube("oex")
   quit sc
 }
 
