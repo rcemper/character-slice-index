@@ -6,4 +6,5 @@ zn "USER"
 zpm "install webterminal"
 zpm "load /opt/irisbuild/ -v":1
 zpm "oex-mapping test -v"
+set sc=##class(%DeepSee.Utils).%BuildCube("oex")
 halt
