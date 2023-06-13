@@ -1,5 +1,7 @@
 zn "%SYS"
 Do ##class(Security.Users).UnExpireUserPasswords("*")
+set ds("DeepSeeEnabled")=1
+set sc=##class(Security.Applications).Set("/csp/user/",.ds)
 zn "USER"
 zpm "install webterminal"
 zpm "load /opt/irisbuild/ -v":1
