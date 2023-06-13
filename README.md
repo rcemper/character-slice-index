@@ -69,17 +69,17 @@ and see the results:
 http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?$NAMESPACE=USER
 
 #### Analytics
-I have added a Cube and Pivot table for various exercises.
-The Cube is built based onthe remainders from Unit test.
-An initial Pivot 'oex' is prepared.
+I have added a Cube and Pivot table for various exercises.   
+The Cube is built based onthe remainders from Unit test.    
+An initial Pivot 'oex' is prepared.   
 
 #### Quick Loading
-If do not want to wait for a complete fresh load   
-there is a short cut based on a snapshot of OEX from 2023-06-12 available  
+If do not want to wait for a complete fresh load     
+there is a short cut based on a snapshot of OEX from 2023-06-12 available    
 ````
 - CALL oex.QUICK()  
 ````
-finally the Analytics Cube is rebuilt to reflect the results
+Finally also the Analytics Cube is rebuilt to reflect the results.  
 
 [1st Article in DC](https://community.intersystems.com/post/oex-mapping)    
 [2nd Article in DC](https://community.intersystems.com/post/oex-mapping-2)    
