@@ -86,6 +86,6 @@ Finally also the Analytics Cube is rebuilt to reflect the results.
  
 [Video](https://youtu.be/c5MOQMCfNRQ)    
 
-[Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp)   
+[Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp?$NAMESPACE=USER)   
 [Demo Server WebTerminal](https://oex-mapping.demo.community.intersystems.com/terminal/)    
 [Demo Server Unit-Tests](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25UnitTest.Portal.Indices.cls?Index=2&$NAMESPACE=USER)        
