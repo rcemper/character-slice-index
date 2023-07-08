@@ -3,7 +3,7 @@
   <Document name="character-slice-index.ZPM">
     <Module>
       <Name>character-slice-index</Name>
-      <Description>a different text index/Description> 
+      <Description>a different text index</Description> 
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
