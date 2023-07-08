@@ -1,4 +1,4 @@
-name: Cloud Run Deploy
+_name: Cloud Run Deploy
 
 on:
   push:
