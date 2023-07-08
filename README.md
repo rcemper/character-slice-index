@@ -13,77 +13,81 @@ docker-compose up -d --build
 ```
 ## How to Test it
 ```
-docker-compose exec iris iris session iris
+docker-compose exec iris iris session iris  
 ```
 
-There are 4 SQL procedures written in embedded Python to manipulate the table    
-````
-- oex.CLEAR()           to erase the whole table   
-- oex.LOAD(first,last)  to load directory pages first to last..to   
-- oex.PAGE(pn)          to load an inidividual directory page   
-- oex.DETAIL(id)        to fill all details for a specific package   
-````
-You may just use any of them by **CALL procedure()** or **SELECT procedure()**  
-To load details  **SELECT id,oex.DETAIL(id) from oex.map where author is null**    
-is the most elegant way.  
-
-## Data Load 
-In practical tests it turned out that loading directory pages is no problen.   
-Differently, with the package details I experienced network timeouts every 30..50 packages.   
-Restarting the download is no problem and works OK. Though you have to watch it.   
-As this rather unattractive and took 40 minutes or more I created an additional SQL procedure   
-````
-- CALL oex.TOTAL()  
-````
-It traps all odd network or other incidents and restarts until completed   
-Due to the long run time it is no well suited to SMB or Webterminal   
-You better use it from the console with SQL shell to escape from timeouts   
-````
-$ docker-compose exec iris iris session iris
+There is a populate procedure that you can run from SQL Shell   
+The reply is the last ID generated    
+The default line size is 37 char.   
+You can change it by passing some different size  
+```
 USER>do $system.SQL.Shell()
-[SQL]USER>>CALL oex.TOTAL()
-1.      call oex.TOTAL()
-2023-06-07 19:10:25 load directory
-2023-06-07 19:10:27 directory page 1
-2023-06-07 19:10:29 directory page 2
-2023-06-07 19:10:31 directory page 3
-2023-06-07 19:10:34 directory page 4
-   -- -- - - 
-````
-And in [Management Portal](http://localhost:42773/csp/sys/UtilHome.csp) 
-you may watch the table and the progress in loading   
+[SQL]USER>>select rcc_slice.pop()
+38
+[SQL]USER>>select rcc_slice.pop(15)
+130
+[SQL]USER>>select rcc_slice.pop(50)
+158
+[SQL]USER>>select documentid,count(*) lines from rcc_slice.data group by documentid
+documentid      lines
+28      28
+43      92
+62      38
+```
+Next we look for lines containing **ol**     
+Classic approach:    
+```
+[SQL]USER>>
+        1>>SELECT ID, documentid, line, length(line), lineid
+        2>>FROM rcc_slice.data WHERE line [ 'ol'
+        3>>go   
+27 Rows(s) Affected
+statement prepare time(s)/globals/cmds/disk: 0.0841s/42,502/225,481/0ms
+          execute time(s)/globals/cmds/disk: 0.0010s/ 159 /4,444/0ms
+                          cached query class: %sqlcq.USER.cls7
+---------------------------------------------------------------------------
+```
+Character Slice approach:    
+```
+[SQL]USER>>
+        1>>SELECT ID, documentid, line, length(line), lineid
+        2>>FROM rcc_slice.data WHERE line %CONTAINSTERM ('ol')
+        3>>go
+27 Rows(s) Affected
+statement prepare time(s)/globals/cmds/disk: 0.0847s/42,849/238,674/0ms
+          execute time(s)/globals/cmds/disk: 0.0011s/ 34 /3,900/0ms
+                          cached query class: %sqlcq.USER.cls8
+---------------------------------------------------------------------------  
+```
+Even with this small data sample we see only **34** Global Access instead of **159**   
 
+Now let's look for 2 independent values **ol** and **w**    
+Classic approach:
+```
+[SQL]USER>>
+        1>>SELECT ID, documentid, line, length(line), lineid
+        2>>FROM rcc_slice.data WHERE line [ 'ol' and line [ 'w'
+        3>>go   
+4 Rows(s) Affected
+statement prepare time(s)/globals/cmds/disk: 0.0805s/42,670/233,791/0ms
+          execute time(s)/globals/cmds/disk: 0.0004s/ 159 /2,340/0ms
+                          cached query class: %sqlcq.USER.cls9
+---------------------------------------------------------------------------
+```
+Character Slice approach:    
+```
+[SQL]USER>>
+        1>>SELECT ID, documentid, line, length(line), lineid
+        2>>FROM rcc_slice.data WHERE line %CONTAINSTERM ('ol','w')
+        3>>go
+4 Rows(s) Affected
+statement prepare time(s)/globals/cmds/disk: 0.0901s/43,417/265,856/0ms
+          execute time(s)/globals/cmds/disk: 0.0005s/ 15 / 1,632/0ms
+                          cached query class: %sqlcq.USER.cls11
+---------------------------------------------------------------------------
+```
+It's getting dramatic: less than 10% !    
+Only **15** instead of **159** Global Access    
+You are invited to extrapolation of these results    
 
-#### Unit Test
-from terminal / console prompt run  
-````
-zpm "oex-mapping test -v"
-````
-or
-````
-zwrite ##class(oex.test).Run()
-````
-and see the results:  
-http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?$NAMESPACE=USER
-
-#### Analytics
-I have added a Cube and Pivot table for various exercises.   
-The Cube is built based onthe remainders from Unit test.    
-An initial Pivot 'oex' is prepared.   
-
-#### Quick Loading
-If do not want to wait for a complete fresh load     
-there is a short cut based on a snapshot of OEX from 2023-06-12 available    
-````
-- CALL oex.QUICK()  
-````
-Finally also the Analytics Cube is rebuilt to reflect the results.  
-
-[1st Article in DC](https://community.intersystems.com/post/oex-mapping)    
-[2nd Article in DC](https://community.intersystems.com/post/oex-mapping-2)    
- 
-[Video](https://youtu.be/c5MOQMCfNRQ)    
-
-[Demo Server SMP](https://oex-mapping.demo.community.intersystems.com/csp/sys/UtilHome.csp?$NAMESPACE=USER)   
-[Demo Server WebTerminal](https://oex-mapping.demo.community.intersystems.com/terminal/)    
-[Demo Server Unit-Tests](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25UnitTest.Portal.Indices.cls?Index=2&$NAMESPACE=USER)        
+[Article in DC](https://community.intersystems.com/post/character-slice-index)  
