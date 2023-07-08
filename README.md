@@ -21,7 +21,7 @@ The reply is the last ID generated
 The default line size is 37 char.   
 You can change it by passing some different size  
 
-```
+
 -  USER>do $system.SQL.Shell()   
 -  [SQL]USER>>select rcc_slice.pop()   
 -  38  
@@ -34,8 +34,7 @@ You can change it by passing some different size
 -  28      28  
 -  43      92   
 -  62      38
--
-```   
+
 Next we look for lines containing **ol**     
 Classic approach:    
 ```
