@@ -37,14 +37,14 @@ You can change it by passing some different size
 
 Next we look for lines containing **ol**     
 Classic approach:    
-- [SQL]USER>>  
--        1>>SELECT ID, documentid, line, length(line), lineid  
--        2>>FROM rcc_slice.data WHERE line [ 'ol'  
--        3>>go   
-- 27 Rows(s) Affected  
--  statement prepare time(s)/globals/cmds/disk: 0.0841s/42,502/225,481/0ms  
--          execute time(s)/globals/cmds/disk: 0.0010s/ 159 /4,444/0ms  
--                          cached query class: %sqlcq.USER.cls  
+- [SQL]USER>>     
+        1 SELECT ID, documentid, line, length(line), lineid    
+        2 FROM rcc_slice.data WHERE line [ 'ol'  
+        3 go   
+- 27 Rows(s) Affected    
+   statement prepare time(s)/globals/cmds/disk: 0.0841s/42,502/225,481/0ms  
+           execute time(s)/globals/cmds/disk: 0.0010s/ 159 /4,444/0ms   
+                           cached query class: %sqlcq.USER.cls   
 
 Character Slice approach:    
 ```
@@ -56,7 +56,7 @@ Character Slice approach:
 statement prepare time(s)/globals/cmds/disk: 0.0847s/42,849/238,674/0ms
           execute time(s)/globals/cmds/disk: 0.0011s/ 34 /3,900/0ms
                           cached query class: %sqlcq.USER.cls8
----------------------------------------------------------------------------  
+ 
 ```
 Even with this small data sample we see only **34** Global Access instead of **159**   
 
