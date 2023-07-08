@@ -22,18 +22,19 @@ The default line size is 37 char.
 You can change it by passing some different size  
 
 ```
-  USER>do $system.SQL.Shell()   
-  [SQL]USER>>select rcc_slice.pop()   
-  38  
-  [SQL]USER>>select rcc_slice.pop(15)   
-  130  
-  [SQL]USER>>select rcc_slice.pop(50)   
-  158  
-  [SQL]USER>>select documentid,count(*) lines from rcc_slice.data group by documentid  
-  documentid      lines  
-  28      28  
-  43      92   
-  62      38  
+-  USER>do $system.SQL.Shell()   
+-  [SQL]USER>>select rcc_slice.pop()   
+-  38  
+-  [SQL]USER>>select rcc_slice.pop(15)   
+-  130  
+-  [SQL]USER>>select rcc_slice.pop(50)   
+-  158  
+-  [SQL]USER>>select documentid,count(*) lines from rcc_slice.data group by documentid  
+-  documentid      lines  
+-  28      28  
+-  43      92   
+-  62      38
+-
 ```   
 Next we look for lines containing **ol**     
 Classic approach:    
