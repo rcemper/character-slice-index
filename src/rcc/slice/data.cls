@@ -44,6 +44,7 @@ ClassMethod Populate(linesize As %Integer = 37) As %Integer [ SqlName = Pop, Sql
       , doc.line=$e(lorem,1,linesize)
       , lorem=$e(lorem,linesize+1,*)
       , sc=doc.%Save()
+    if sc      ;;; just for quality
     quit:'$l(lorem)  
   }
   quit doc.%Id()
