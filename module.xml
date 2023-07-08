@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="oex-mapping.ZPM">
+  <Document name="character-slice-index.ZPM">
     <Module>
-      <Name>oex-mapping</Name>
-      <Description>extract info from OEX</Description> 
-      <Version>0.0.3</Version>
+      <Name>character-slice-index</Name>
+      <Description>a different text index/Description> 
+      <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="oex.PKG"/>
-      <Resource Name="oex.GBL"/>
-      <UnitTest Name="/src" Package="UnitTests" Phase="test"/>	    
-    </Module>
+      <Resource Name="rcc.PKG"/>
+  </Module>
   </Document>
 </Export>
