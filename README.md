@@ -23,31 +23,29 @@ You can change it by passing some different size
 
 
 -  USER>do $system.SQL.Shell()   
--  [SQL]USER>>select rcc_slice.pop()   
--  38  
--  [SQL]USER>>select rcc_slice.pop(15)   
--  130  
--  [SQL]USER>>select rcc_slice.pop(50)   
--  158  
--  [SQL]USER>>select documentid,count(*) lines from rcc_slice.data group by documentid  
--  documentid      lines  
--  28      28  
--  43      92   
--  62      38
+-  [SQL]USER>>select rcc_slice.pop()     
+   38  
+-  [SQL]USER>>select rcc_slice.pop(15)     
+   130  
+-  [SQL]USER>>select rcc_slice.pop(50)    
+   158  
+-  [SQL]USER>>select documentid,count(*) lines from rcc_slice.data group by documentid      
+   documentid      lines  
+   28      28  
+   43      92   
+   62      38
 
 Next we look for lines containing **ol**     
 Classic approach:    
-```
-[SQL]USER>>
-        1>>SELECT ID, documentid, line, length(line), lineid
-        2>>FROM rcc_slice.data WHERE line [ 'ol'
-        3>>go   
-27 Rows(s) Affected
-statement prepare time(s)/globals/cmds/disk: 0.0841s/42,502/225,481/0ms
-          execute time(s)/globals/cmds/disk: 0.0010s/ 159 /4,444/0ms
-                          cached query class: %sqlcq.USER.cls7
----------------------------------------------------------------------------
-```
+- [SQL]USER>>  
+-        1>>SELECT ID, documentid, line, length(line), lineid  
+-        2>>FROM rcc_slice.data WHERE line [ 'ol'  
+-        3>>go   
+- 27 Rows(s) Affected  
+-  statement prepare time(s)/globals/cmds/disk: 0.0841s/42,502/225,481/0ms  
+-          execute time(s)/globals/cmds/disk: 0.0010s/ 159 /4,444/0ms  
+-                          cached query class: %sqlcq.USER.cls  
+
 Character Slice approach:    
 ```
 [SQL]USER>>
