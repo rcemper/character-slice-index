@@ -5,7 +5,7 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ### Installation 
 Clone/git pull the repo into any local directory
 ```
-git https://github.com/rcemper/Dataset-OEX-reviews.git
+git https://github.com/rcemper/character-slice-index.git
 ```
 Run the IRIS container with your project: 
 ```
@@ -15,8 +15,6 @@ docker-compose up -d --build
 ```
 docker-compose exec iris iris session iris
 ```
-or use **[Online Demo](https://oex-mapping.demo.community.intersystems.com/csp/sys/%25CSP.Portal.Home.zen)**   
-The demo is loaded already. There is no need to rebuild / reload it.   
 
 There are 4 SQL procedures written in embedded Python to manipulate the table    
 ````
