@@ -36,6 +36,7 @@ ClassMethod Populate(linesize As %Integer = 37) As %Integer [ SqlName = Pop, Sql
       "amico dit me que Occidental es."
   set max=0
   &sql(select max(%ID) into :max from rcc_charslice.data)
+  if SQLCODE break      ;;; just for quality
   set docid=$R(100)+max
   for lin=1:1 {
     set doc=..%New()
@@ -44,7 +45,7 @@ ClassMethod Populate(linesize As %Integer = 37) As %Integer [ SqlName = Pop, Sql
       , doc.line=$e(lorem,1,linesize)
       , lorem=$e(lorem,linesize+1,*)
       , sc=doc.%Save()
-    if sc      ;;; just for quality
+    if sc break     ;;; just for quality
     quit:'$l(lorem)  
   }
   quit doc.%Id()
