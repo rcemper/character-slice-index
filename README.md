@@ -1,16 +1,16 @@
-[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FOEX-mapping&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FOEX-mapping)   
-### Prerequisites
+[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FOEX-mapping&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FOEX-mapping)      
+### Prerequisites    
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
-### Installation 
-Clone/git pull the repo into any local directory
+### Installation  
+Clone/git pull the repo into any local directory   
 ```
-git clone https://github.com/rcemper/character-slice-index.git
+git clone https://github.com/rcemper/character-slice-index.git    
+```   
+Run the IRIS container with your project:     
 ```
-Run the IRIS container with your project: 
-```
-docker-compose up -d --build
-```
+docker-compose up -d --build   
+```   
 ## How to Test it
 ```
 docker-compose exec iris iris session iris  
