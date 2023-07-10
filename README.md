@@ -4,9 +4,11 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 ### Installation  
 Clone/git pull the repo into any local directory   
-[(git clone https://github.com/rcemper/character-slice-index.git    ]()
-   
-Run the IRIS container with your project:     
+````
+git clone https://github.com/rcemper/character-slice-index.git
+````   
+Run the IRIS container with your project:   
+
 ```
 docker-compose up -d --build   
 ```   
@@ -19,7 +21,6 @@ There is a populate procedure that you can run from SQL Shell
 The reply is the last ID generated    
 The default line size is 37 char.   
 You can change it by passing some different size  
-
 
 -  USER>do $system.SQL.Shell()   
 -  [SQL]USER>>select rcc_slice.pop()     
