@@ -5,7 +5,7 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ### Installation 
 Clone/git pull the repo into any local directory
 ```
-git https://github.com/rcemper/character-slice-index.git
+git clone https://github.com/rcemper/character-slice-index.git
 ```
 Run the IRIS container with your project: 
 ```
