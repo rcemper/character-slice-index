@@ -35,7 +35,7 @@ ClassMethod Populate(linesize As %Integer = 37) As %Integer [ SqlName = Pop, Sql
       "A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge "_
       "amico dit me que Occidental es."
   set max=0
-  &sql(select max(%ID) into :max from rcc_charslice.data)
+  &sql(select max(%ID) into :max from rcc_slice.data)
   if SQLCODE break      ;;; just for quality
   set docid=$R(100)+max
   for lin=1:1 {
