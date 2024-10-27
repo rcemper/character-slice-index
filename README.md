@@ -84,4 +84,6 @@ It's getting dramatic: less than 10% !
 Only **15** instead of **159** Global Access    
 You are invited to extrapolation of these results    
 
-[Article in DC](https://community.intersystems.com/post/character-slice-index)  
+[Article in DC](https://community.intersystems.com/post/character-slice-index)     
+
+[Video](https://youtu.be/fl0SDt-rxAU)   
