@@ -4,7 +4,7 @@
     <Module>
       <Name>character-slice-index</Name>
       <Description>a different text index</Description> 
-      <Version>0.0.2</Version>
+      <Version>0.0.3</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="rcc.PKG"/>
