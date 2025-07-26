@@ -1,7 +1,9 @@
 zn "%SYS"
 Do ##class(Security.Users).UnExpireUserPasswords("*")
+zpm "install iterm"
+zpm "install passwordless"
+
 zn "USER"
-zpm "install webterminal"
 zpm "load /opt/irisbuild/ -v":1
 zpm "list"
 halt
