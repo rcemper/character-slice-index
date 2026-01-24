@@ -1,3 +1,6 @@
+<img src="https://community.intersystems.com/sites/default/files/inline/images/archived.gif" width=100></img>
+<b>&nbsp;no maintenance or update</b> 
+
 ### Prerequisites    
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
@@ -87,3 +90,4 @@ You are invited to extrapolation of these results
 [Article in DC](https://community.intersystems.com/post/character-slice-index)     
 
 [Video](https://youtu.be/fl0SDt-rxAU)   
+
